@@ -429,7 +429,7 @@ function task() {
                 const fullpath = `${__dirname}/tmp/${path}`;
                 let cmd = //`cd '${__dirname}' && (cd tmp > /dev/null || (mkdir tmp && cd tmp)) &&` +
                     `yt-dlp  ${config.cookie !== undefined ? `--cookies ${config.cookie}` : ''} ${getWebsiteUrl(website, videoID, p)} -f ${format.replace('x', '+')} ` +
-                    `-o '${fullpath}/${videoID}.%(ext)s' ${recode !== undefined ? `--recode ${recode}` : ''} -k --write-info-json`;
+                    `-o '${fullpath}/${videoID}.%(ext)s' ${recode !== undefined ? `--recode ${recode}` : ''} -k --write-info-json --no-playlist`;
                 console.log('下载视频, 命令:', cmd);
                 try {
                     let dest = 'Unknown dest';
